@@ -25,7 +25,7 @@ public class CityController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @PostMapping
-    public ResponseEntity<CityDTO> insert(@Valid @RequestBody CityDTO dto){
+    public ResponseEntity<CityDTO> insert(@RequestBody @Valid CityDTO dto){
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body( service.insert(dto));
