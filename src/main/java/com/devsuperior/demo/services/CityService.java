@@ -15,7 +15,7 @@ public class CityService {
 
     public List<CityDTO> findAll() {
         List<CityDTO> result = repository.findAll()
-                .stream()
+                .stream().sorted((a,b)->a.getName().compareTo(b.getName()))
                 .map(x -> new CityDTO(x)).toList();
 
         return result;

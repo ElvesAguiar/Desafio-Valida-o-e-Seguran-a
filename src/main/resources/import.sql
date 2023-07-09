@@ -18,8 +18,11 @@ INSERT INTO tb_event(name, date, url, city_id) VALUES ('Semana Spring React', '2
 INSERT INTO tb_user (name, email, password) VALUES ('ana','ana@gmail.com','$2a$10$5cnrOY137Fqmbz3I9tZB5uw/S86yi6uxnyj5lTiz.XCwnIsprVRBS')
 INSERT INTO tb_user (name, email, password) VALUES ('bob','bob@gmail.com','$2a$10$5cnrOY137Fqmbz3I9tZB5uw/S86yi6uxnyj5lTiz.XCwnIsprVRBS')
 
-INSERT INTO tb_role (authority) VALUES ('Admin')
-INSERT INTO tb_role (authority) VALUES ('Client')
 
-INSERT INTO tb_user_role (user_id,role_id) VALUES (1,1)
-INSERT INTO tb_user_role (user_id,role_id) VALUES (2,2)
+INSERT INTO tb_role (authority) VALUES ('ROLE_CLIENT');
+INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
+
+INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
+
