@@ -5,9 +5,7 @@ import com.devsuperior.demo.entities.City;
 import com.devsuperior.demo.repositories.CityRepository;
 import com.devsuperior.demo.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,10 @@ public class CityController {
     @GetMapping
     public List<CityDTO> findAlll(){
         return service.findAll();
+    };
+
+    @PostMapping
+    public CityDTO insert(@RequestBody CityDTO dto){
+        return service.insert(dto);
     };
 }

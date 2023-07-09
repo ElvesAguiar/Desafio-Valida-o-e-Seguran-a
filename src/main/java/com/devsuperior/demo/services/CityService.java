@@ -13,9 +13,18 @@ public class CityService {
     @Autowired
     private CityRepository repository;
 
-    public List<CityDTO> findAll(){
-        List<CityDTO> result = repository.findAll().stream().map(x -> new CityDTO(x)).toList();
+    public List<CityDTO> findAll() {
+        List<CityDTO> result = repository.findAll()
+                .stream()
+                .map(x -> new CityDTO(x)).toList();
 
         return result;
+    }
+
+    public CityDTO insert(CityDTO dto) {
+        City city = new City();
+        city.setName(dto.getName());
+        city = repository.save(city);
+        return new CityDTO(city);
     }
 }
